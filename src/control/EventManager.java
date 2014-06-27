@@ -10,7 +10,7 @@ public class EventManager {
 
     public static void main(String[] args) {
         GameClock clock = new GameClock();
-        BufferedJFrame frame = new BufferedJFrame(0,0,680,680,"Emineo");
+        BufferedJFrame frame = new BufferedJFrame(0, 0, 680, 680, "Emineo");
         frame.centerFrame();
         clock.start(60, frame);
         frame.enableFpsCounter(clock);
