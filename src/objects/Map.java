@@ -9,6 +9,7 @@ package objects;
 import control.EventManager;
 import game.Clock;
 import java.awt.Image;
+import javax.swing.ImageIcon;
 import resources.GameObject;
 
 /**
@@ -21,12 +22,16 @@ public class Map extends GameObject{
     
     public Map(Maps m){
         super(0, 0, new Image[] {m.image}, EventManager.clock.bufferedDevices[0]);
+        for(TowerLocation t : m.towerLocations){
+            t.draw();
+        }
     }
     
 }
 
 
 enum Maps{
+    NORTH("North", new ImageIcon(new EventManager().getClass().getResource("/art/map.png")).getImage(), new TowerLocation[] {})
     
     ;
     
@@ -40,3 +45,5 @@ enum Maps{
         image = img;
     }
 }
+
+

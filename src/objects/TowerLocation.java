@@ -1,15 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package objects;
+
+import control.EventManager;
+import java.awt.Image;
+import resources.GameObject;
 
 /**
  *
  * @author austinletson
  */
-public class TowerLocation {
-
+public class TowerLocation extends GameObject{
+    public TowerLocation(int x, int y){
+        super(x, y, x+40, y+40, new Image[] {}, EventManager.clock.bufferedDevices[0]);
+    }
 }
