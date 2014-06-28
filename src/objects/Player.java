@@ -6,6 +6,7 @@
 
 package objects;
 
+import control.EventManager;
 import resources.GameObject;
 
 /**
@@ -14,6 +15,6 @@ import resources.GameObject;
  */
 public class Player extends GameObject{
     public Player(){
-        super();
+        super(EventManager.clock.bufferedDevices[0]);
     }
 }

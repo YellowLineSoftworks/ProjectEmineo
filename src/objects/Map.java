@@ -6,6 +6,7 @@
 
 package objects;
 
+import control.EventManager;
 import game.Clock;
 import java.awt.Image;
 import resources.GameObject;
@@ -19,7 +20,7 @@ public class Map extends GameObject{
     Maps type;
     
     public Map(Maps m){
-        super(0, 0, m.image, bufferedDevices[0]);
+        super(0, 0, new Image[] {m.image}, EventManager.clock.bufferedDevices[0]);
     }
     
 }
