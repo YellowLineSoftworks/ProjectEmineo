@@ -2,6 +2,7 @@ package control;
 
 import graphics.swing.BufferedJFrame;
 import javax.swing.ImageIcon;
+import objects.Map;
 import resources.ResolutionCalculator;
 import resources.gameobjects.Button;
 
@@ -25,6 +26,8 @@ public class EventManager {
         Button.buttons.clear();
         clock.bufferedDevices[0].clear();
         System.out.println("Started.");
+        Map testMap = new Map(Map.Maps.NORTH);
+        testMap.draw();
     }
     
     public static void quit() {
