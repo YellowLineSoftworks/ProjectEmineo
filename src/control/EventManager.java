@@ -55,7 +55,7 @@ public class EventManager {
         try {
             clock.bufferedDevices[0].drawImage(new ImageIcon(new EventManager().getClass().getResource("/art/map.png")).getImage(), 0, 0, 680, 680);
             clock.bufferedDevices[0].drawImage(new ImageIcon(new EventManager().getClass().getResource("/art/yellowlinesoftworks.png")).getImage(), 220, 640);
-            clock.bufferedDevices[0].drawImage(new ImageIcon(new EventManager().getClass().getResource("/art/buttons/mainmenu/title.png")).getImage(), 90, 0);
+            clock.bufferedDevices[0].drawImage(new ImageIcon(new EventManager().getClass().getResource("/art/title.png")).getImage(), 90, 0);
             Button start = new Button(290, 300, new ImageIcon(new EventManager().getClass().getResource("/art/buttons/mainmenu/start.png")).getImage(), 
                     new ImageIcon(new EventManager().getClass().getResource("/art/buttons/mainmenu/startselected.png")).getImage(), 
                     new EventManager().getClass().getMethod("start"),clock.bufferedDevices[0]);

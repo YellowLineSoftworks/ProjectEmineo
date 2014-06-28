@@ -13,7 +13,7 @@ public class GameClock extends Clock {
         try {
             bufferedDevices[0].drawImage(new ImageIcon(getClass().getResource("/art/map.png")).getImage(), 0, 0, 680, 680);
             bufferedDevices[0].drawImage(new ImageIcon(getClass().getResource("/art/yellowlinesoftworks.png")).getImage(), 220, 640);
-            bufferedDevices[0].drawImage(new ImageIcon(getClass().getResource("/art/buttons/mainmenu/title.png")).getImage(), 90, 0);
+            bufferedDevices[0].drawImage(new ImageIcon(getClass().getResource("/art/title.png")).getImage(), 90, 0);
             Button start = new Button(290, 300, new ImageIcon(getClass().getResource("/art/buttons/mainmenu/start.png")).getImage(), 
                     new ImageIcon(getClass().getResource("/art/buttons/mainmenu/startselected.png")).getImage(), 
                     new EventManager().getClass().getMethod("start"),bufferedDevices[0]);

@@ -27,14 +27,14 @@ public class Map extends GameObject{
     
     public Map(Maps m){
         
-        super(0, 0, new Image[] {m.image}, EventManager.clock.bufferedDevices[0]);
+        super(0, 0, 680, 680, new Image[] {m.image}, EventManager.clock.bufferedDevices[0]);
         type = m;
         
     }
 
     @Override
     public void draw() {
-        super.draw(); 
+        super.draw();
         for(TowerLocation t : type.towerLocations){
             t.draw();
         }
@@ -62,7 +62,7 @@ public class Map extends GameObject{
         new TowerLocation(40, 420, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
         new TowerLocation(280,325, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
         new TowerLocation(340, 165, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
-        new TowerLocation(355, 155, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
+        new TowerLocation(355, 115, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
         new TowerLocation(445, 150, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage())
     
     })
