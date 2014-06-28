@@ -15,6 +15,6 @@ import resources.GameObject;
  */
 public class Player extends GameObject{
     public Player(){
-        super(EventManager.clock.bufferedDevices[0]);
+        super(EventManager.getClock().bufferedDevices[0]);
     }
 }

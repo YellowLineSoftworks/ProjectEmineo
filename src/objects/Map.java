@@ -7,39 +7,37 @@
 package objects;
 
 import control.EventManager;
-import game.Clock;
+
 import java.awt.Image;
 import javax.swing.ImageIcon;
+
 import resources.GameObject;
-import objects.TowerLocation;
 
 /**
- *
  * @author austinletson
  */
-public class Map extends GameObject{
+public class Map extends GameObject {
 
-    
+
     Maps type;
     private static Map currentMap;
-    
 
-    
-    public Map(Maps m){
-        
-        super(0, 0, 680, 680, new Image[] {m.image}, EventManager.clock.bufferedDevices[0]);
+
+    public Map(Maps m) {
+
+        super(0, 0, 680, 680, new Image[]{m.image}, EventManager.getClock().bufferedDevices[0]);
         type = m;
-        
+
     }
 
     @Override
     public void draw() {
         super.draw();
-        for(TowerLocation t : type.towerLocations){
+        for (Tower t : type.towers) {
             t.draw();
         }
     }
-    
+
     /**
      * @return the currentMap
      */
@@ -53,35 +51,30 @@ public class Map extends GameObject{
     public static void setCurrentMap(Map aCurrentMap) {
         currentMap = aCurrentMap;
     }
-    
-    public enum Maps{
-    NORTH("North", new ImageIcon(new EventManager().getClass().getResource("/art/map.png")).getImage(), new TowerLocation[] {
-        new TowerLocation(203, 609, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
-        new TowerLocation(158, 443, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
-        new TowerLocation(160, 400, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
-        new TowerLocation(40, 420, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
-        new TowerLocation(280,325, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
-        new TowerLocation(340, 165, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
-        new TowerLocation(355, 115, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage()),
-        new TowerLocation(445, 150, new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage())
-    
-    })
-    
-    ;
-    
-        
-    TowerLocation[] towerLocations;
-    String name;
-    Image image;
-    Maps(String n, Image img, TowerLocation[] tL){
-        towerLocations = tL;
-        name = n;
-        image = img;
+
+    public enum Maps {
+        NORTH("North", new ImageIcon(new EventManager().getClass().getResource("/art/map.png")).getImage(),
+                new int[][]{{203, 609}, {158, 443}, {160, 400}, {40, 420}, {280, 325}, {340, 165}, {355, 115}, {445, 150}},
+                new ImageIcon(new EventManager().getClass().getResource("/art/towerlocation.png")).getImage());
+
+
+        Tower[] towers;
+        String name;
+        Image image;
+
+        Maps(String n, Image img, int[][] tL, Image towerLocationImage) {
+            name = n;
+            image = img;
+            towers = new Tower[tL.length];
+            for (int i = 0; i < towers.length; i++) {
+                towers[i] = new Tower(tL[i][0], tL[i][1], towerLocationImage);
+            }
+        }
     }
 }
     
     
-}
+
 
 
 
