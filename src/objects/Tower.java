@@ -24,7 +24,7 @@ public class Tower extends GameObject{
 
     public void upgradeTower(TowerUpgrade towerUpgrade){
         level = towerUpgrade.level;
-        //setimage to  tower ugraade image
+        this.changeSprites(new Image[] {towerUpgrade.towerImage});
 
     }
 
