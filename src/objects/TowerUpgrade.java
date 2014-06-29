@@ -1,7 +1,6 @@
 package objects;
 
 import control.EventManager;
-import graphics.BufferedDevice;
 import resources.GameObject;
 
 import java.awt.*;
@@ -27,12 +26,13 @@ public class TowerUpgrade extends GameObject {
 
     }
 
-    public enum TowerUpgrades{
+    public enum TowerUpgrades {
         ;
         int level;
-        Image  towerUpgradeButtonImage;
+        Image towerUpgradeButtonImage;
         Image towerImage;
-        TowerUpgrades(int l, Image tI, Image tUBI){
+
+        TowerUpgrades(int l, Image tI, Image tUBI) {
             level = l;
             towerImage = tI;
             towerUpgradeButtonImage = tUBI;

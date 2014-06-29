@@ -7,11 +7,10 @@
 package objects;
 
 import control.EventManager;
-
-import java.awt.Image;
-import javax.swing.ImageIcon;
-
 import resources.GameObject;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author austinletson

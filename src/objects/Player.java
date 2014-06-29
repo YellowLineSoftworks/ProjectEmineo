@@ -10,11 +10,10 @@ import control.EventManager;
 import resources.GameObject;
 
 /**
- *
  * @author austinletson
  */
-public class Player extends GameObject{
-    public Player(){
+public class Player extends GameObject {
+    public Player() {
         super(EventManager.getClock().bufferedDevices[0]);
     }
 }
