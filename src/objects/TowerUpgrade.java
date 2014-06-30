@@ -24,9 +24,17 @@ public class TowerUpgrade extends GameObject {
         towerImage = enumeratedUpgrade.towerImage;
         towerUpgradeButtonImage = enumeratedUpgrade.towerUpgradeButtonImage;
 
+        try {
+            addFunctionOnClick(Tower.class.getMethod("upgradeTower", TowerUpgrade.class), new Object[] {this}, tTU);
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public enum TowerUpgrades {
+
         ;
         int level;
         Image towerUpgradeButtonImage;
