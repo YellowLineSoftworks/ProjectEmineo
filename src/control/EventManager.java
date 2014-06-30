@@ -22,7 +22,7 @@ public class EventManager {
     }
     
     public static void start() {
-        Button.buttons.clear();
+        Button.clear();
         getClock().bufferedDevices[0].clear();
         System.out.println("Started.");
         Map testMap = new Map(Map.Maps.NORTH);
@@ -34,7 +34,7 @@ public class EventManager {
     }
     
     public static void options() {
-        Button.buttons.clear();
+        Button.clear();
         getClock().bufferedDevices[0].clear();
         getClock().bufferedDevices[0].drawImage(new ImageIcon(new EventManager().getClass().getResource("/art/map.png")).getImage(), 0, 0, 680, 680);
         getClock().bufferedDevices[0].drawImage(new ImageIcon(new EventManager().getClass().getResource("/art/yellowlinesoftworks.png")).getImage(), 220, 640);
@@ -49,7 +49,7 @@ public class EventManager {
     }
     
     public static void backToMain() {
-        Button.buttons.clear();
+        Button.clear();
         getClock().bufferedDevices[0].clear();
         try {
             getClock().bufferedDevices[0].drawImage(new ImageIcon(new EventManager().getClass().getResource("/art/map.png")).getImage(), 0, 0, 680, 680);
