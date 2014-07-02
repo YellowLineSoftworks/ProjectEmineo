@@ -9,6 +9,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ArrayList;
+import objects.TowerUpgrade;
 
 /**
  * @author austinletson
@@ -26,9 +27,9 @@ public class Tower extends GameObject {
 
         try {
 
-            addFunctionOnClick(this.getClass().getMethod("displayTowerUpgrades", null) );
+            addFunctionOnClick(this.getClass().getMethod("displayTowerUpgrades"), new Object[]{}, this);
         } catch (NoSuchMethodException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
 
 
@@ -56,8 +57,11 @@ public class Tower extends GameObject {
         int x = 0;
         int y = 0;
 
-        for(TowerUpgrade.TowerUpgrades TU: TowerUpgrade.TowerUpgrades.values()){
-            if(TU.level == level + 1){
+        TowerUpgrade.TowerUpgrades[] possibleEnumerations = TowerUpgrade.TowerUpgrades.class.getEnumConstants();
+
+        for(int i = 0; i < possibleEnumerations.length; i++){
+            System.out.println();
+            if(possibleEnumerations[i].level == level + 1){
                 switch(counter){
                     case 0:
                         x = location.x;
@@ -73,11 +77,12 @@ public class Tower extends GameObject {
 
                 }
                 try {
-                    towerUpgradeButtons.add(new Button(x, y, TU.towerImage, TU.towerImage,
-                            this.getClass().getMethod("upgradeTower", null),
-                            this, new Object[] {new TowerUpgrade(TU, this)}, EventManager.getClock().bufferedDevices[0]));
+                    towerUpgradeButtons.add(new Button(x, y, possibleEnumerations[i].towerImage, possibleEnumerations[i].towerImage,
+                            this.getClass().getMethod("upgradeTower"),
+                            this, new Object[] {new TowerUpgrade(possibleEnumerations[i], this)}, EventManager.getClock().bufferedDevices[0]));
 
                 }catch(Exception e){
+                    System.err.println(e.getMessage());
                     e.printStackTrace();
                 }
 

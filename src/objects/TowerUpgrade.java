@@ -34,10 +34,10 @@ public class TowerUpgrade extends GameObject {
 
     }
 
-    public enum TowerUpgrades {
+    public static enum TowerUpgrades {
 
-        BASIC_TOWER(1, new ImageIcon(new TowerUpgrade(null, null).getClass().getResource("/art/buttons/mainmenu/startselected.png")).getImage(),
-                new ImageIcon(new TowerUpgrade(null, null).getClass().getResource("/art/buttons/mainmenu/startselected.png")).getImage())
+        BASIC_TOWER(1, new ImageIcon(new EventManager().getClass().getResource("/art/buttons/mainmenu/startselected.png")).getImage(),
+                new ImageIcon(new EventManager().getClass().getResource("/art/buttons/mainmenu/startselected.png")).getImage())
 
         ;
         int level;
