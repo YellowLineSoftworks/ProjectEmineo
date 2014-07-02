@@ -78,7 +78,7 @@ public class Tower extends GameObject {
                 }
                 try {
                     towerUpgradeButtons.add(new Button(x, y, possibleEnumerations[i].towerImage, possibleEnumerations[i].towerImage,
-                            this.getClass().getMethod("upgradeTower"),
+                            Tower.class.getDeclaredMethod( "upgradeTower", TowerUpgrade.class),
                             this, new Object[] {new TowerUpgrade(possibleEnumerations[i], this)}, EventManager.getClock().bufferedDevices[0]));
 
                 }catch(Exception e){
