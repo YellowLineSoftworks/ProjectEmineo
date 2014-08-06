@@ -11,43 +11,41 @@ import java.awt.*;
  */
 public class TowerUpgrade extends GameObject {
 
-
     Tower towerToUpgrade;
     int level;
     Image towerImage;
     Image towerUpgradeButtonImage;
-
+    Image towerUpgradeButtonPressedImage;
 
     public TowerUpgrade(TowerUpgrades enumeratedUpgrade, Tower tTU) {
+        
         super(EventManager.getClock().bufferedDevices[0]);
         towerToUpgrade = tTU;
         level = enumeratedUpgrade.level;
         towerImage = enumeratedUpgrade.towerImage;
         towerUpgradeButtonImage = enumeratedUpgrade.towerUpgradeButtonImage;
+        towerUpgradeButtonPressedImage = enumeratedUpgrade.towerUpgradeButtonPressedImage;
 
-        try {
-            addFunctionOnClick(Tower.class.getMethod("upgradeTower", TowerUpgrade.class), new Object[] {this}, tTU);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }
-
-
-    }
+    }    
 
     public static enum TowerUpgrades {
 
-        BASIC_TOWER(1, new ImageIcon(new EventManager().getClass().getResource("/art/buttons/mainmenu/startselected.png")).getImage(),
-                new ImageIcon(new EventManager().getClass().getResource("/art/buttons/mainmenu/startselected.png")).getImage())
-
+        BASIC_TOWER(1, new ImageIcon(new EventManager().getClass().getResource("/art/buttons/tower/basic.png")).getImage(),
+                new ImageIcon(new EventManager().getClass().getResource("/art/buttons/tower/basic.png")).getImage(),
+                new ImageIcon(new EventManager().getClass().getResource("/art/buttons/tower/basicpressed.png")).getImage())
         ;
         int level;
         Image towerUpgradeButtonImage;
+        Image towerUpgradeButtonPressedImage;
         Image towerImage;
 
-        TowerUpgrades(int l, Image tI, Image tUBI) {
+        TowerUpgrades(int l, Image tI, Image tUBI, Image tUBPI) {
             level = l;
             towerImage = tI;
             towerUpgradeButtonImage = tUBI;
+            towerUpgradeButtonPressedImage = tUBPI;
         }
+        
     }
+    
 }
