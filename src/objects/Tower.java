@@ -62,7 +62,7 @@ public class Tower extends GameObject {
                     int x = location.x - (img.getWidth(null)-40)/2;
                     int y = location.y + 50;
                     towerUpgradeButtons.add(new Button(x, y, upgrade.towerUpgradeButtonImage, upgrade.towerUpgradeButtonPressedImage,
-                        Tower.class.getDeclaredMethod( "upgradeTower", TowerUpgrade.class),
+                        Tower.class.getDeclaredMethod("upgradeTower", TowerUpgrade.class),
                         this, new Object[] {new TowerUpgrade(upgrade, this)}, EventManager.getClock().bufferedDevices[0]));
                 } catch(Exception e) {
                     System.err.println(e.getMessage());
